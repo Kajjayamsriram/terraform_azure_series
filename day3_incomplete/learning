@@ -1,0 +1,11 @@
+Note:
+Enable firewall rule(Vmserver-IP) in the database for Mysql server access
+
+Updated the php:7.2-apache to php:8.3-apache
+New PHP image provides a newer MySQL client library that supports caching_sha2_password.
+
+To know the container app IP to be enabled in mysql firewall.
+curl -s ifconfig.me
+
+Generate DigiCert Global Root CA certificate,
+https://learn.microsoft.com/en-us/azure/mysql/security/security-tls-root-certificate-rotation?utm_source=chatgpt.com

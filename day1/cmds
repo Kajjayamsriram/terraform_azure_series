@@ -1,0 +1,23 @@
+az account show --output table
+
+To solve login issues,
+az account clear                                        
+az config set core.enable_broker_on_windows=false
+az login --tenant <tenant-id> 
+
+Choose your Image Details(Ex: ubuntu),
+az vm image list-publishers --location eastus --output table|grep -i canonical
+az vm image list-offers --location eastus --publisher Canonical --output table
+az vm image list-skus --location eastus \
+   --publisher Canonical --offer 0001-com-ubuntu-server-jammy \
+   --output table
+
+Verify vm-sizes in the region,
+az vm list-sizes \
+  --location eastus \
+  --output table | grep Standard_D
+Note: Always verify SKUs in the portal and use them!
+
+Backend setup,
+az storage account create -n pocstorageaccount1013 -g supero-rg -l eastus --sku Standard_LRS --kind StorageV2
+az storage container create -n terraformstate --account-name pocstorageaccount1013 --auth-mode login

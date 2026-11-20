@@ -1,0 +1,8 @@
+#pass the sub-id as environment variable.
+Linux
+export ARM_SUBSCRIPTION_ID=$(az account show --query id -o tsv)
+
+Powershell
+$env:ARM_SUBSCRIPTION_ID = (az account show --query id -o tsv)
+
+#Since the az login failed within Azure vm disabled the #Security defaults in the EntraId as a quick work around

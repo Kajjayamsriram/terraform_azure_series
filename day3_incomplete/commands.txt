@@ -1,0 +1,5 @@
+az acr list --resource-group tse --output table
+
+az acr login -n mysqldbregistry #Note: If ACR is private Create Instnace in Vnet to push Img.
+docker push mysqldbregistry.azurecr.io/bank:v1
+

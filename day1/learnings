@@ -1,0 +1,4 @@
+Note: For newer resouce type(azure_linux_virtual_machine) it works with public_ip_address.
+For legacy resource use public_ip resource in output,
+azurerm_public_ip.poc-pub.ip_address
+
